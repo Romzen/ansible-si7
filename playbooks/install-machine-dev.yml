@@ -20,6 +20,7 @@
 #      apt_key:
 #        url: https://packages.sury.org/php/apt.gpg
 #        state: present
+    
     - name: Inscrire le nouveau dépot
       apt_repository:
         repo: deb https://packages.sury.org/php/ stretch main
@@ -29,3 +30,20 @@
       apt:
        name: php7.2
        state: present
+    
+    - name: Installation de python pip
+      apt:
+       name: python-pip
+       state: present
+    
+- name: Installation de Mysql 
+  hosts: all
+  tasks:
+    - name: Installer le module Python pour Mysql
+      pip:
+        name: PyMySQL   
+        state : present
+    - name: Installation de mysqlserver
+      apt:
+        name: mysql-server
+        state: present
