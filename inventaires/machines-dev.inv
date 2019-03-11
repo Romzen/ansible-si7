@@ -3,5 +3,5 @@
 
 [Debian9Developpement:vars]
 mysql_user=eleve
-mysql_password=btsinfo
+mysql_password=btsinfo 
 mysql_db=bdeleve
